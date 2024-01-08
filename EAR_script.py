@@ -17,8 +17,8 @@ import os
 
 service_id = "test"
 username  = "your_user_name"
-server = Server('address_of_server', use_ssl=True)
-conn = Connection(server, user = 'user_mail' , password= 'password', auto_bind=True)
+server = Server('address_of_ldap_server', use_ssl=True)
+conn = Connection(server, user = 'ad_user_mail' , password= 'ad_password', auto_bind=True)
 conn.bind()
 
 #--------------
@@ -91,7 +91,8 @@ for users in reports:
                      password_age)
                      )
 
-                print(temp_table)             
+                print(temp_table) 
+                
 #--------------
 # Connecting to our Postgre DB and inserting data from loop
 #--------------
