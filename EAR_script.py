@@ -16,28 +16,28 @@ import os
 #--------------
 
 service_id = "test"
-username  = "dsv\\sd.automation"
-server = Server('ldaps.emea.dsv.com', use_ssl=True)
-conn = Connection(server, user = 'kamil.karpiuk@dsv.com' , password= '#avezmech1989', auto_bind=True)
+username  = "your_user_name"
+server = Server('address_of_server', use_ssl=True)
+conn = Connection(server, user = 'user_mail' , password= 'password', auto_bind=True)
 conn.bind()
 
 #--------------
 #Block to connect into PG DB
 #--------------
 
-ORAUSER='DSVINTEG'
-ORAPASSWORD='ugyCg7CBf0nNgi9YV0xm'
+ORAUSER=''
+ORAPASSWORD=''
 ORA_SDTZ='UTC'
-PGUSER='dashboard'
-PGPASSWORD='F2njvd@fdjk8'
-#PGHOST = 'i26441.dsv.com'
-PGHOST = 'i26442.dsv.com'
+PGUSER=''
+PGPASSWORD=''
+#PGHOST = ''
+PGHOST = ''
 
 #--------------
 # To retrive data of employes directly reports to specific manager
 #--------------
 
-managers_name = 'marcin.kawka'
+managers_name = ''
 def getDirectReports(samAccountName):
     conn.search(
             search_base='OU=DSV.COM,DC=DSV,DC=COM',
