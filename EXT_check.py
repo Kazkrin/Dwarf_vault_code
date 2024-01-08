@@ -17,8 +17,8 @@ import colorlog
 
 service_id = "test"
 username  = "dsv\\sd.automation"
-server = Server('ldaps.emea.dsv.com', use_ssl=True)
-conn = Connection(server, user = 'kamil.karpiuk@dsv.com' , password= '#avezmech1989', auto_bind=True)
+server = Server('ldap_server_address', use_ssl=True)
+conn = Connection(server, user = 'ad_user_mail' , password= 'ad_user_password', auto_bind=True)
 conn.bind()
 
 
@@ -26,13 +26,13 @@ conn.bind()
 #Block to connect into PG DB
 #--------------
 
-ORAUSER='DSVINTEG'
-ORAPASSWORD='ugyCg7CBf0nNgi9YV0xm'
+ORAUSER='oracledb_username'
+ORAPASSWORD='oracle_username_password'
 ORA_SDTZ='UTC'
-PGUSER='dashboard'
-PGPASSWORD='F2njvd@fdjk8'
-#PGHOST = 'i26441.dsv.com'
-PGHOST = 'i26442.dsv.com'
+PGUSER='database_username'
+PGPASSWORD='passwrod_to_database'
+#PGHOST = ''
+
 
 
 #--------------
@@ -40,7 +40,7 @@ PGHOST = 'i26442.dsv.com'
 #--------------
 
 
-managers_name = 'marcin.kawka'
+managers_name = ''
 def getDirectReports(samAccountName):
     conn.search(
             search_base='OU=DSV.COM,DC=DSV,DC=COM',
