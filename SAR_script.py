@@ -13,32 +13,32 @@ import tzlocal
 #--------------
 
 service_id = "test"
-username  = "dsv\\sd.automation"
-server = Server('ldaps.emea.dsv.com', use_ssl=True)
-conn = Connection(server, user = 'PL.SVC.6463.EARSCR.prd' , password= '2Mma7MOrvUw?A$38vk?dLD0D', auto_bind=True)
+username  = ""
+server = Server('', use_ssl=True)
+conn = Connection(server, user = '' , password= '', auto_bind=True)
 conn.bind()
 
 #--------------
 #Block to connect into PG DB
 #--------------
 
-ORAUSER='DSVINTEG'
-ORAPASSWORD='ugyCg7CBf0nNgi9YV0xm'
+ORAUSER=''
+ORAPASSWORD=''
 ORA_SDTZ='UTC'
-PGUSER='dashboard'
-PGPASSWORD='F2njvd@fdjk8'
-#PGHOST = 'i26441.dsv.com'
-PGHOST = 'i26442.dsv.com'
+PGUSER=''
+PGPASSWORD=''
+PGHOST = ''
+
 
 
 #--------------
 #Block to retrive SVC under specific owner
 #--------------
 
-owner_name = 'kamil.karpiuk'
+owner_name = ''
 def getDirectReports(samAccountName):
     conn.search(
-            search_base='OU=DSV.COM,DC=DSV,DC=COM',
+            search_base='',
             search_filter=f'(samAccountName={samAccountName})',
             attributes=[
                 'directReports',
@@ -54,7 +54,7 @@ def getDirectReports(samAccountName):
 temp_table = []
 def getAccountDetails(distinguishedName):
     conn.search(
-        search_base='OU=DSV.COM,DC=DSV,DC=COM',
+        search_base='',
         search_filter=f'(distinguishedName={distinguishedName})', 
         attributes = [
         'samAccountName', 
