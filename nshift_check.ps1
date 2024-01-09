@@ -1,7 +1,7 @@
 # Define the SQL Server instance name
-$serverInstance = "i26329.dsv.com"
-$username = "G.S.6463.DEVELOP.PRD"
-$password = "wCATEvhvR0e@!Rl8uS161Bd!"
+$serverInstance = ""
+$username = ""
+$password = ""
 
 # Create a connection string
 $connectionString = "Server=$serverInstance;User=$username;Password=$password;Integrated Security=True;"
