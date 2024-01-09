@@ -1,7 +1,7 @@
 # Define the SQL Server instance name
-$serverInstance = "i26329.dsv.com"
-$username = "G.S.6463.DEVELOP.PRD"
-$password = "wCATEvhvR0e@!Rl8uS161Bd!"
+$serverInstance = ""
+$username = ""
+$password = ""
 
 # Create a connection string
 $connectionString = "Server=$serverInstance;User=$username;Password=$password;Integrated Security=True;"
@@ -31,8 +31,8 @@ catch {
 
 #Query a WTP database for transactions stuck in Awaiting
 try {
-    #$usernameDB = "G.S.6463.NSHIFT.prd"
-    #$passwordDB = "!TNe0Lx?h3UXVc0pWA8hm?w7"
+    #$usernameDB = ""
+    #$passwordDB = ""
     $query = "SELECT * FROM [WTP].dbo.REQUEST_TRANSACTIONS rt WHERE rt.STATUS = 'ERROR'"
     $query = "SELECT *,DATEDIFF(MINUTE, RECEIVED_TIMESTAMP, CURRENT_TIMESTAMP) AS TimeDifferenceInMinutes FROM [WTP].dbo.REQUEST_TRANSACTIONS rt WHERE rt.STATUS = 'ERROR'"
     $query = "SELECT *,FLOOR(DATEDIFF(SECOND, RECEIVED_TIMESTAMP, CURRENT_TIMESTAMP) / 60.0) AS TimeDifferenceInMinutes FROM [WTP].dbo.REQUEST_TRANSACTIONS rt WHERE rt.STATUS = 'ERROR' AND FLOOR(DATEDIFF(SECOND, RECEIVED_TIMESTAMP, CURRENT_TIMESTAMP) / 60.0) <= 10;"
