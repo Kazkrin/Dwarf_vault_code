@@ -1,7 +1,7 @@
 # Define the SQL Server instance name
-$serverInstance = "i26329.dsv.com"
-$username = "G.S.6463.DEVELOP.PRD"
-$password = "wCATEvhvR0e@!Rl8uS161Bd!"
+$serverInstance = ""
+$username = ""
+$password = ""
 
 # Create a connection string
 $connectionString = "Server=$serverInstance;User=$username;Password=$password;Integrated Security=True;"
@@ -16,8 +16,8 @@ $response_ok = '{
             "checkresult": {
                 "type": "service"
             },
-            "hostname": "i26329.dsv.com",
-            "servicename": "WTP SQL Listener",
+            "hostname": "",
+            "servicename": "",
             "state": "0",
             "output": "All is OK"
         }
@@ -30,7 +30,7 @@ $response_crit = '{
             "checkresult": {
                 "type": "service"
             },
-            "hostname": "i26329.dsv.com",
+            "hostname": "",
             "servicename": "WTP SQL Listener",
             "state": "2",
             "output": "Critical: WTP SQL Listener is not running"
@@ -65,8 +65,8 @@ if($connection.State -eq [System.Data.ConnectionState]::Open)
 
 ######Send information to nagios######
 [System.Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
-$token = 'YY8X2QPZ6e0K'
+$token = ''
 $cmd ='submitcheck'
-$Uri = "http://nagios.prd.sit-automation.dsv.com/nrdp/?token=$token&cmd=$cmd&json=$json"
+$Uri = ""
 $Result = Invoke-webrequest -UseBasicParsing -Uri $Uri -method Post 
 Write-Output $Result
