@@ -66,6 +66,4 @@ while True:
         else:
             print("Your input answer is invalid to proceed. Type 'Yes' or 'No' to roll.")
 
-#------
-# ChatGPT version of my code
-#------
+
